@@ -1,0 +1,185 @@
+<div class="app-alert">
+    </div>
+
+    
+<section class="parallax-window" data-parallax="scroll" data-image-src="http://localhost:3000/uploads/<%= data.rest_image2 %>"
+         data-natural-width="1400">
+</section>
+<div class="collapse" id="collapseMap">
+    <div id="qp_map-map-canvas"></div></div>
+<!--publicidad-->
+
+<div class="container margin_60_35">
+    <div class="publicidad">
+            </div>
+    <div class="row">
+        <div class="col-md-12">
+            
+<div class="box_style_2 rest-data">
+    <div class="row">
+        <div class="col-md-2 col-sm-3">
+            <img onerror="this.src='http://localhost:3000/img/default.jpg';" src="http://localhost:3000/uploads/<%= data.rest_image1 %>" class="img-responsive img-thumbnail"
+                 style="width: 100%;">
+
+
+                       
+                    </div>
+        <div class="col-md-10 col-sm-9">
+          
+            <h3><%= data.rest_name %></h3>
+            <p><strong><!-- Dirección:--></strong> <%= data.rest_address %> 
+                <strong><!-- Telefono:--></strong> <%= data.rest_phone %> </p>
+            <p></p>
+            <p><!--  Categoria:--> <a href="#"><%= data.rest_name %> </a></p>
+            <p class="hidden">
+                                    <a href="tel://4486086" class="phone">
+                        <i class="glyphicon glyphicon-phone"></i>
+                       <%= data.rest_name %><br>
+                        (
+                        <small><%= data.rest_address %></small>
+                        )<br><br>
+                    </a>
+                            </p>
+                       
+    
+      
+        <div class="rating" style="color: #555;">
+            <i id ="star1" class="icon_star voted"></i>
+            <i id ="star2" class="icon_star "></i>
+            <i id ="star3" class="icon_star "></i>
+            <i id ="star4" class="icon_star "></i>
+            <i id ="star5" class="icon_star "></i>
+           <span id ="countStars" style="color: #5d5d5d;font-weight: bolder;">(<%= data.rest_quality %>)</span>
+        </div>
+   
+
+  
+   
+
+        </div>
+    </div>
+
+</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <p>
+                <a class="btn_map" data-toggle="collapse" aria-expanded="false"
+                   aria-controls="collapseMap">Informacion</a>
+            </p>
+
+            <div class="box_style_2">
+                
+<h4 class="nomargin_top">Direccion:</h4>
+<ul class="opening_list">
+            <li> 
+                <%= data.rest_address %></li>
+    </ul>
+            </div>
+
+            <div class="box_style_2">
+                
+<h4 class="nomargin_top">Horarios de atención <i class="icon_clock pull-right"></i></h4>
+<ul class="opening_list">
+            <li>
+            <%= data.rest_workinghours %>
+        </li>
+    </ul>
+            </div>
+
+            <div class="box_style_2 hidden-xs" id="help">
+                <i class="icon_headphones"></i>
+                <h4>Telefono</span></h4>
+                <a href="<%= data.rest_phone %>" class="phone"><%= data.rest_phone %></a>
+                <small></small>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="box_style_2">
+                <h2 class="inner">Descripción</h2>
+
+                
+                <h3>Acerca de <%= data.rest_name %></h3>
+
+                "<%= data.rest_description %>"
+                
+<div id="summary_review">
+    <div id="general_rating">
+       <div id="totalComments"><%=data.rest_comments.length %>        opiniones</div>
+        <div class="rating">
+            <a href="#" data-toggle="modal" data-target="#myReview" style="color:#555"><i id="start1" class="icon_star "voted"></i></a>
+            <a href="#" data-toggle="modal" data-target="#myReview" style="color:#555"><i id="start2" class="icon_star "voted"></i></a>
+            <a href="#" data-toggle="modal" data-target="#myReview" style="color:#555"><i id="start3" class="icon_star "voted"></i></a>
+            <a href="#" data-toggle="modal" data-target="#myReview" style="color:#555"><i id="start4" class="icon_star "></i></a>
+            <a href="#" data-toggle="modal" data-target="#myReview" style="color:#555"><i id="start5" class="icon_star "></i></a>
+        </div>
+    </div>
+
+    <!-- End row -->
+    <hr class="styled">
+  
+           
+    </div>
+<div id="opinions">
+         <% for(var i=0; i < data.rest_comments.length; i++) { %>
+         	<div class="review_strip_single">
+   
+                <small><%= data.rest_comments[i].comm_date %></small>
+                <h4><%= data.rest_comments[i].comm_user.user_name %></h4>
+            
+              <%= data.rest_comments[i].comm_comment %>
+                <div class="row">
+                    <div class="col-md-3">
+                        
+                    </div>
+                    <div class="col-md-3">
+                      
+                    </div>
+                    <div class="col-md-3">
+                       
+                    </div>
+                    <div class="col-md-3">
+                        
+                    </div>
+                </div>
+                <!-- End row -->
+            </div>
+		 <% } %>   
+</div>
+    </div>
+
+            </div>
+            <!-- End box_style_1 -->
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="myReview" tabindex="-1" role="dialog" aria-labelledby="review" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content modal-popup">
+            <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
+                <form id="review" class="popup-form" name="review" action="/commentsclient" method="post">
+					
+					<input type="text" id="comm_restaurant" name="comm_restaurant" value="<%= data._id %>" style="display:none">
+                    <input type="text" id="comm_date" name="comm_date" style="display:none">
+                    
+                    <select  name="comm_user" id="comm_user" type="input">
+                        
+                        <% for(var i=0; i < users.length; i++) {  %>
+                        <option value="<%= users[i]._id %>" ><%= users[i].user_name %></option>
+                        <%  }%>
+                    </select>
+					
+					<div class="login_icon"><i class="icon_comment_alt"></i></div>
+					<textarea type="text" id="comm_comment" name="comm_comment" class="form-control form-white" style="height:200px"></textarea>
+					<input   type="submit"  value="Dejar comentario" class="btn btn-submit" id="submit-review">
+				</form>
+            <div id="message-review"></div>
+        </div>
+    </div>
+</div>
+
+
+

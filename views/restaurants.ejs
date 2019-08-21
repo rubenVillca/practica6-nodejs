@@ -1,0 +1,59 @@
+<div class="container" style="padding-top: 150px;">  
+    <a href="/formcreaterestaurant" routerLinkActive="active" class="btn btn-primary">
+      Add
+    </a>
+  </div>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>   
+        <th scope="col">Name</th> 
+        <th scope="col">Description</th> 
+        <th scope="col">Address</th> 
+        <th scope="col">Phone</th>  
+        <th scope="col">Category</th>  
+        <th scope="col">Quality</th>  
+        <th scope="col">Image1</th>  
+        <th scope="col">Image2</th>  
+        <th scope="col">WorkingHours</th>  
+
+        <th scope="col">Modificar</th>  
+        <th scope="col">Eliminar</th>  
+
+      </tr>
+    </thead>
+      
+    <tbody>        
+      <% for(var i=0; i < data.length; i++) { %>
+          <tr>
+            <td><a href="/restaurants/<%= data[i]._id %>"><%= data[i].rest_name %></a></td>
+            <td><%= data[i].rest_description %></td>
+            <td><%= data[i].rest_address %></td>
+            <td><%= data[i].rest_phone %></td>
+            <td><%= data[i].rest_category %></td>
+            <td><%= data[i].rest_quality %></td>
+            <td><%= data[i].rest_image1 %></td>
+            <td><%= data[i].rest_image2 %></td>
+            <td><%= data[i].rest_workinghours %></td>
+            
+            <td><a href="/formupdaterestaurant/<%= data[i]._id %>" type="button" class="btn btn-info">Modificar</a></td>
+  
+            <td>
+            <form method="POST" action="/restaurants/<%= data[i]._id %>?_method=DELETE">
+              <input type="button" value="Eliminar" onclick="eliminar(this)" class="btn btn-danger">
+                
+            </form>
+          </tr>      
+      <% } %>      
+    </tbody>
+  </table>
+  
+  <script>
+  
+  function eliminar(input)
+                      {
+                          var deleteOk = confirm('¿Estás seguro de eliminar la película?')
+                          return (deleteOk) ? input.parentNode.submit() : false
+                      }
+  
+    </script>
+  

@@ -1,0 +1,21 @@
+<div class="container" style="padding-top: 150px;">
+<form  class="was-validated" action="/oldui/users/<%= data._id %>?_method=PUT" method="post">
+
+  <input type="hidden" name="_method" value="put" />
+
+<label  >Nombre</label>
+
+    <input class="form-control" name="user_name" id="user_name" type="input" value="<%= data.user_name %>" />
+
+    <label  >Email</label>
+    <input class="form-control" name="user_email" id="user_email" type="input"  value="<%= data.user_email %>" />
+  
+      
+        <button class="btn btn-primary" type="submit">Update</button>
+    
+      
+</form>
+</div>
+
+
+

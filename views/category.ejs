@@ -1,0 +1,80 @@
+<div class="app-alert">
+    </div>
+        <section class="parallax-window" id="short" data-parallax="scroll" data-image-src="http://localhost:3000/img/banner-category.png"
+                 data-natural-width="1400">
+            <div id="subheader">
+                <div id="sub_content">
+                    <h1>Califica aqui. </h1>
+                </div>
+            </div>
+        </section>
+
+        <div class="container margin_60_35">
+            <div class="row">
+        
+                <div class="col-md-1">
+                    
+        </div>
+
+        <div class="col-md-11">
+
+            <div id="list-wrapper" class="list-wrapper">
+                            
+                    
+                <% for(var i=0; i < data.length; i++) { %>
+                <div data-key="39">
+                <div class="strip_list wow fadeIn animated" data-wow-delay="0.1s"
+                     style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
+                           
+                        <div class="row">
+                        <div class="col-md-9 col-sm-9">
+                            <div class="desc">
+                                <div class="thumb_strip">
+                                    <a href="/restaurants/<%= data[i]._id %>">
+                                        <img onerror="this.src='http://localhost:3000/img/default.jpg';" src="http://localhost:3000/uploads/<%= data[i].rest_image1  %>"><%= data[i].rest_image1  %>
+                                    </a>
+                                </div>
+                                <div class="rating">
+                                
+                            <div class="container">
+		  </div>
+    
+                              
+        						
+                              
+                                    
+                                    Quality(
+                                    <small><a href="#0"><%= data[i].rest_quality  %></a></small>
+                                    )
+                                </div>
+                                <h3><%= data[i].rest_name  %></h3>
+                                <div class="type">
+                                    <%= data[i].rest_description  %>                </div>
+                                <div class="location hidden">
+                                   <%= data[i].rest_address  %>
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3">
+                            <div class="go_to">
+                                <div>
+                                    <a href="/restaurantsclient/<%= data[i]._id %>"
+                                       class="btn_1">Comentar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- End row-->
+                </div>
+                </div>
+				<% } %>    
+
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+

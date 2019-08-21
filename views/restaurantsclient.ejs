@@ -1,0 +1,155 @@
+
+<!--Slider principal-->
+
+    <div id="full-slider-wrapper">
+        <div id="layerslider" style="width:100%;height:540px;">
+                            <div class="ls-slide" data-ls="slidedelay: 5000; transition2d:5;">
+                    <img src="http://localhost:3000/img/banner1.jpg" class="ls-bg" alt="Slide background">
+                    <h3 class="ls-l slide_typo" style="top: 44%; left: 50%;"
+                        data-ls="offsetxin:0;durationin:2000;delayin:1000;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% bottom 0;offsetxout:0;rotatexout:90;transformoriginout:50% bottom 0;">
+                        Pide comida a domicilio </h3>
+                    <p class="ls-l slide_typo_2" style="top:52%; left:50%;"
+                       data-ls="durationin:2000;delayin:1000;easingin:easeOutElastic;">
+                        de los mejores restaurantes en tu ciudad                    </p>
+                    
+                </div>
+
+                            <div class="ls-slide" data-ls="slidedelay: 5000; transition2d:5;">
+                    <img src="http://localhost:3000/img/banner2.jpg" class="ls-bg" alt="Slide background">
+                    <h3 class="ls-l slide_typo" style="top: 44%; left: 50%;"
+                        data-ls="offsetxin:0;durationin:2000;delayin:1000;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% bottom 0;offsetxout:0;rotatexout:90;transformoriginout:50% bottom 0;">
+                        Pide comida a domicilio </h3>
+                    <p class="ls-l slide_typo_2" style="top:52%; left:50%;"
+                       data-ls="durationin:2000;delayin:1000;easingin:easeOutElastic;">
+                        de los mejores restaurantes en tu ciudad                    </p>
+                    
+                </div>
+
+                            <div class="ls-slide" data-ls="slidedelay: 5000; transition2d:5;">
+                    <img src="http://localhost:3000/img/banner3.jpg" class="ls-bg" alt="Slide background">
+                    <h3 class="ls-l slide_typo" style="top: 44%; left: 50%;"
+                        data-ls="offsetxin:0;durationin:2000;delayin:1000;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% bottom 0;offsetxout:0;rotatexout:90;transformoriginout:50% bottom 0;">
+                        Pide comida a domicilio </h3>
+                    <p class="ls-l slide_typo_2" style="top:52%; left:50%;"
+                       data-ls="durationin:2000;delayin:1000;easingin:easeOutElastic;">
+                        de los mejores restaurantes en tu ciudad                    </p>
+                    
+                </div>
+
+            
+
+     </div>
+  </div>
+
+
+
+
+
+<!--crarrusel de restaurantes-->
+
+
+
+<div class="white_bg">
+    <div class="container margin_60">
+        <div class="main_title">
+            <h2 class="nomargin_top" style="padding-top:0">La mejor comida</h2>
+            <p>
+                de los mejores restaurantes            </p>
+        </div>
+        <div id="car-rest" class="slick-widget">
+            
+            
+			
+			 <% for(var i=0; i < data.length; i++) { %>
+          
+
+
+<div class="slick-widget-item">
+    <a href="/restaurants/<%= data[i]._id %>">
+        <div class="content"
+             style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.3)), url(<%= data[i].rest_image1 %>); background-size:100%;background-repeat: no-repeat;background-position: center;">
+        </div>
+    </a>
+</div>
+
+		  
+      <% } %>    
+	  
+	  
+         
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<!--pasos de como funciona-->
+<div class="container margin_60">
+
+    <div class="main_title">
+        <h2 class="nomargin_top" style="padding-top:0">Cómo funciona</h2>
+        <p>
+        
+        </p>
+    </div>
+    <div class="row">
+      
+        <div class="col-md-12 col-sm-2">
+            <div class="box_home" id="three">
+                
+                <h3>Pons es una aplicacion movil que te permite buscar restaurantes y boliches en la ciudad de Cochabamba, de acuerdo a diferentes criterios como categoria, precios o ubicacion.</br>Ademas  la pagina web de Pons te permite calificar los lugares que estan en la aplicacion y ver los reviews de otras personas.</h3>
+            </div>
+        </div>
+       
+    </div><!-- End row -->
+    
+</div><!-- End container -->
+<!--publicidad-->
+<div class="publicidad">
+    </div>
+
+<!--crarrusel de categorias-->
+
+
+<div class="white_bg">
+    <div class="container margin_60">
+        <div class="main_title">
+            <h2 class="nomargin_top" style="padding-top:0">Elige una categoría</h2>
+
+        </div>
+        <div id="car-cats" class="slick-widget">
+
+<div class="slick-widget-item">
+    <a href="http://localhost:3000/restaurantcategory?category=restaurant">
+        <div class="content"
+             style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6)), url(./img/restaurants.jpg); background-size:cover;">
+            <span>Restaurants</span>
+        </div>
+    </a>
+</div>
+
+<div class="slick-widget-item">
+    <a href="http://localhost:3000/restaurantcategory?category=boliche">
+        <div class="content"
+             style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6)), url(./img/boliches.jpg); background-size:cover;">
+            <span>Boliches</span>
+        </div>
+    </a>
+</div>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+</div>

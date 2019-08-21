@@ -1,0 +1,46 @@
+<div class="container" style="padding-top: 150px;">
+<div class="card" style="width: 18rem;">      
+  <div class="card-body">
+      <h5 class="card-title">Name: <%= data.rest_name %></h5>
+      <p class="card-text">Description: <%= data.rest_description %>.</p>
+      <p class="card-text">Address: <%= data.rest_address %>.</p>
+      <p class="card-text">Phone: <%= data.rest_phone %>.</p>
+      <p class="card-text">Category: <%= data.rest_category %>.</p>
+      <p class="card-text">Cuality: <%= data.rest_cuality %>.</p>
+      <p class="card-text">Image1: <%= data.rest_image1 %>.</p>
+      <p class="card-text">Image2: <%= data.rest_image2 %>.</p>
+      <p class="card-text">WorkingHours: <%= data.rest_workinghours %>.</p>
+      <a href="/restaurants" class="btn btn-primary">Go Back</a>
+  </div>
+</div>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>   
+      <th scope="col">Comment</th>       
+      <th scope="col">Date</th> 
+      <th scope="col">User Name</th> 
+      <th scope="col">User Email</th> 
+    </tr>
+  </thead>
+    
+  <a href="/formcreatecomment?comm_restaurant=<%= data._id %>" routerLinkActive="active" class="btn btn-primary">
+    Add
+  </a>
+  <tbody>        
+    <% for(var i=0; i < data.rest_comments.length; i++) { %>
+        <tr>
+          <td><a href="/comments/<%= data.rest_comments[i]._id %>"><%= data.rest_comments[i].comm_comment %></a></td>
+          
+          <td><%= data.rest_comments[i].comm_date %></td>
+
+          <td><%= data.rest_comments[i].comm_user.user_name %></td>
+
+          <td><%= data.rest_comments[i].comm_user.user_email %></td>
+        
+        </tr>      
+    <% } %>      
+  </tbody>
+</table>
+</div>
+

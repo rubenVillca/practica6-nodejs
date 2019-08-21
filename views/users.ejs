@@ -1,0 +1,42 @@
+<div class="container" style="padding-top: 150px;">
+<div>    
+  <a href="/formcreate" routerLinkActive="active" class="btn btn-primary">
+    Add
+  </a>
+</div>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>   
+      <th scope="col">Nombre</th> 
+      <th scope="col">Email</th> 
+      <th scope="col">Update</th> 
+      <th scope="col">Remove</th>  
+    </tr>
+  </thead>
+    
+  <tbody>        
+    <% for(var i=0; i < data.length; i++) { %>
+        <tr>
+          <td><a href="/users/<%= data[i]._id %>"><%= data[i].user_name %></a></td>
+          <td><%= data[i].user_email %></td>
+          <td><a href="/formupdate/<%= data[i]._id %>" type="button" class="btn btn-info">Modificar</a></td>
+
+          <td>
+          <form method="POST" action="/users/<%= data[i]._id %>?_method=DELETE">
+            <input type="button" value="Eliminar" onclick="eliminar(this)" class="btn btn-danger">
+              
+          </form>
+        </tr>      
+    <% } %>      
+  </tbody>
+</table>
+</div>
+<script>
+
+function eliminar(input)
+					{
+						var deleteOk = confirm('¿Estás seguro de eliminar la película?')
+						return (deleteOk) ? input.parentNode.submit() : false
+					}
+
+  </script>

@@ -1,0 +1,34 @@
+<div class="container" style="padding-top: 150px;">
+<form  class="was-validated" action="/comments" method="POST">
+    <label>Comment</label> 
+    <input class="form-control" name="comm_comment" id="comm_comment" type="input" />
+
+    <label>User Id</label>
+    
+
+    <select class="form-control" name="comm_user" id="comm_user" type="input">
+            <option value=" " > </option>
+            <% for(var i=0; i < users.length; i++) {  %>
+            <option value="<%= users[i]._id %>" ><%= users[i].user_name %></option>
+            <%  }%>
+        </select>
+
+    <label>Date</label>
+    <input class="form-control" name="comm_date" id="comm_date" type="input" />
+
+    <label>Restaurant Id</label>
+ 
+    <select class="form-control" name="comm_restaurant" id="comm_restaurant" type="input">
+        <% for(var i=0; i < restaurants.length; i++) { 
+             var selected = ( restaurants[i]._id == data.comm_restaurant ) ? "selected" : "";
+            %>
+        <option value="<%= restaurants[i]._id %>" <%= selected %>><%= restaurants[i].rest_name %></option>
+        <%  }%>
+    </select>
+
+    <button class="btn btn-primary" type="submit">Save</button>
+        
+          
+</form>
+
+</div>

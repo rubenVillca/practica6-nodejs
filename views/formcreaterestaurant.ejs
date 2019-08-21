@@ -1,0 +1,41 @@
+<div class="container" style="padding-top: 150px;">
+<form  class="was-validated" action="/restaurants" method="POST" enctype="multipart/form-data">
+    <label  >Nombre</label> 
+    <input class="form-control" name="rest_name" id="rest_name" type="input" />
+
+    <label  >Description</label>
+    <input class="form-control" name="rest_description" id="rest_description" type="input" />
+
+    <label  >Address</label>
+    <input class="form-control" name="rest_address" id="rest_address" type="input" />
+
+    <label  >Phone</label>
+    <input class="form-control" name="rest_phone" id="rest_phone" type="input" />
+
+    <label  >Category</label>
+    
+    <select class="form-control" name="rest_category" id="rest_category" type="input">
+        
+        <option value="restaurant">restaurant</option>
+        <option value="boliche">boliche</option>
+        
+    </select>
+
+    <label  >Quality</label>
+    <input class="form-control" name="rest_quality" id="rest_quality" type="input" />
+
+    <label  >Image1</label>
+    <input class="form-control" name="rest_image1" id="rest_image1" type="file" />
+
+    <label  >Image2</label>
+    <input class="form-control" name="rest_image2" id="rest_image2" type="file" />
+
+    <label  >Workinghours</label>
+    <input class="form-control" name="rest_workinghours" id="rest_workinghours" type="input" />
+        
+    <button class="btn btn-primary" type="submit">Save</button>
+        
+          
+</form>
+
+</div>

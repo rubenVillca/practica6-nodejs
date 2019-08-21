@@ -1,0 +1,20 @@
+<div class="container" style="padding-top: 150px;">
+<form  class="was-validated" action="/oldui/comments" method="POST">
+  <label>Comment</label> 
+  <input class="form-control" name="comm_comment" id="comm_comment" type="input" value="<%= data.comm_comment %>" />
+
+  <label>User Id</label>
+  <input class="form-control" name="comm_user" id="comm_user" type="input" value="<%= data.comm_user %>" />
+
+  <label>Date</label>
+  <input class="form-control" name="comm_date" id="comm_date" type="input" value="<%= data.comm_date %>"/>
+
+  <label>Restaurant Id</label>
+  <input class="form-control" name="comm_restaurant" id="comm_restaurant" type="input" value="<%= data.comm_restaurant %>"/>
+
+  <button class="btn btn-primary" type="submit">Save</button>
+      
+        
+</form>
+
+</div>

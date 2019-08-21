@@ -1,0 +1,35 @@
+<div class="container" style="padding-top: 150px;">
+<form  class="was-validated" action="/oldui/restaurants/<%= data._id %>?_method=PUT" method="POST">
+  <label  >Nombre</label> 
+  <input class="form-control" name="rest_name" id="rest_name" type="input" value="<%= data.rest_name %>" />
+
+  <label  >Description</label>
+  <input class="form-control" name="rest_description" id="rest_description" type="input" value="<%= data.rest_description %>" />
+
+  <label  >Address</label>
+  <input class="form-control" name="rest_address" id="rest_address" type="input" value="<%= data.rest_address %>" />
+
+  <label  >Phone</label>
+  <input class="form-control" name="rest_phone" id="rest_phone" type="input" value="<%= data.rest_phone %>"  />
+
+  <label  >Category</label>
+  <input class="form-control" name="rest_category" id="rest_category" type="input" value="<%= data.rest_category %>" />
+
+  <label  >Quality</label>
+  <input class="form-control" name="rest_quality" id="rest_quality" type="input" value="<%= data.rest_quality %>" />
+
+  <label  >Image1</label>
+  <input class="form-control" name="rest_image1" id="rest_image1" type="input" value="<%= data.rest_image1 %>"  />
+
+  <label  >Image2</label>
+  <input class="form-control" name="rest_image2" id="rest_image2" type="input" value="<%= data.rest_image2 %>" />
+
+  <label  >Workinghours</label>
+  <input class="form-control" name="rest_workinghours" id="rest_workinghours" type="input" value="<%= data.rest_workinghours %>" />
+      
+  <button class="btn btn-primary" type="submit">Save</button>
+      
+        
+</form>
+
+</div>
