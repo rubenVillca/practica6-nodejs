@@ -4,7 +4,8 @@
   "description": "Example using http methods",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+	"start": "node index"
   },
   "author": "Aldo Barrera",
   "license": "MIT",
