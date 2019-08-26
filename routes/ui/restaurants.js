@@ -68,22 +68,26 @@ router.post('/restaurants', async (req, res, next) => {
     form.encoding = 'utf-8';
     var formfields = await new Promise(function (resolve, reject) {
         form.parse(req, function (err, fields, files) {
-            if (err) {
-                reject(err);
-                return;
-            }
-            var oldpath = files.rest_image1.path;
-            var currentpath = path.join(__dirname, '../../public/uploads/');
-            newpath1 = currentpath + files.rest_image1.name;
-            fs.renameSync(oldpath, newpath1);
-            fields.rest_image1 = files.rest_image1.name;
+          if (err) {
+            reject(err);
+            return;
+          }
+          var oldpath = files.rest_image1.path;
+          var currentpath = path.join(__dirname, '../../public/uploads/');
+          newpath1 = currentpath + files.rest_image1.name;
+          var dataread = fs.readFileSync(oldpath);
+          fs.writeFileSync(newpath1, dataread);
+          
+          
+          fields.rest_image1 = files.rest_image1.name;
 
-            oldpath = files.rest_image2.path;
-            currentpath = path.join(__dirname, '../../public/uploads/');
-            newpath2 = currentpath + files.rest_image2.name;
-            fs.renameSync(oldpath, newpath2);
-            fields.rest_image2 = files.rest_image2.name;
-            resolve(fields);
+          oldpath = files.rest_image2.path;
+          currentpath = path.join(__dirname, '../../public/uploads/');
+          newpath2 = currentpath + files.rest_image2.name;
+          var dataread = fs.readFileSync(oldpath);
+          fs.writeFileSync(newpath2, dataread);
+          fields.rest_image2 = files.rest_image2.name;
+          resolve(fields);
         }); 
     });
 
