@@ -1,5 +1,5 @@
 <div class="container" style="padding-top: 150px;">
-<form  class="was-validated" action="/restaurants/<%= data._id %>?_method=PUT" method="POST">
+<form  class="was-validated" action="/restaurants/<%= data._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
   <label  >Nombre</label> 
   <input class="form-control" name="rest_name" id="rest_name" type="input" value="<%= data.rest_name %>" />
 
@@ -19,10 +19,10 @@
   <input class="form-control" name="rest_quality" id="rest_quality" type="input" value="<%= data.rest_quality %>" />
 
   <label  >Image1</label>
-  <input class="form-control" name="rest_image1" id="rest_image1" type="input" value="<%= data.rest_image1 %>"  />
+  <input class="form-control" name="rest_image1" id="rest_image1" type="file" value="<%= data.rest_image1 %>"  />
 
   <label  >Image2</label>
-  <input class="form-control" name="rest_image2" id="rest_image2" type="input" value="<%= data.rest_image2 %>" />
+  <input class="form-control" name="rest_image2" id="rest_image2" type="file" value="<%= data.rest_image2 %>" />
 
   <label  >Workinghours</label>
   <input class="form-control" name="rest_workinghours" id="rest_workinghours" type="input" value="<%= data.rest_workinghours %>" />
