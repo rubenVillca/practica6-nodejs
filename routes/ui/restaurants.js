@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var fs = require('fs');
+
 var RestaurantController = require("../../controllers/restaurants.controller");
 let restaurantController = new RestaurantController();
 
@@ -117,6 +119,17 @@ router.delete('/restaurants/:id', async (req, res, next) => {
   try {
     let id = req.params.id;    
     const restaurant = await restaurantController.delete(id);
+    var img1=restaurant.rest_image1;
+    var img2=restaurant.rest_image2;
+    var currentpath = path.join(__dirname, '../../public/uploads/');
+    try {
+      fs.unlinkSync(currentpath + img1);
+      fs.unlinkSync(currentpath+img2);
+    }catch (e) {
+      console.log('Error: '+e);
+    }
+
+
     const restaurants = await restaurantController.getAll();
     res.render('restaurants', { data: restaurants })
   } catch (e) {

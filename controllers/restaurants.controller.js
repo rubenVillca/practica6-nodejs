@@ -1,4 +1,5 @@
 var restaurantModel = require("../models/restaurants.model");
+
 class RestaurantController {
     constructor() {
 
@@ -41,8 +42,10 @@ class RestaurantController {
      }
 
     async delete (id) {       
-        var data = await restaurantModel.deleteOne({_id:id}); 
-        return data;        
+       var restaurante = await restaurantModel.findOne({_id:id});
+
+        var data = await restaurantModel.deleteOne({_id:id});
+        return restaurante;
      }
 }
 module.exports = RestaurantController;
