@@ -33,7 +33,7 @@ app.set('port',process.env.PORT||3000);
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(__dirname + '/public'));
 let router = express.Router();
-router.use(express.static(path.join(__dirname, '/public')));
+//router.use(express.static(path.join(__dirname, '/public')));
 
 app.use('/', indexRouter);
 app.set('view engine', 'ejs');
