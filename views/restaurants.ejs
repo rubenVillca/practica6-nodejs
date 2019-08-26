@@ -31,8 +31,8 @@
             <td><%= data[i].rest_phone %></td>
             <td><%= data[i].rest_category %></td>
             <td><%= data[i].rest_quality %></td>
-            <td><%= data[i].rest_image1 %></td>
-            <td><%= data[i].rest_image2 %></td>
+            <td><img src="<%='uploads/'+data[i].rest_image1 %>" alt="<%= data[i].rest_image1 %>"></td>
+            <td><img src="<%='uploads/'+data[i].rest_image2 %>" alt="<%= data[i].rest_image2 %>"></td>
             <td><%= data[i].rest_workinghours %></td>
 
             <td><a href="/formupdaterestaurant/<%= data[i]._id %>" type="button" class="btn btn-info">Modificar</a></td>
