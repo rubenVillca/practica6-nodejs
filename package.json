@@ -1,13 +1,13 @@
 {
-  "name": "Example1",
+  "name": "Practice 6",
   "version": "1.0.0",
   "description": "Example using http methods",
   "main": "index.js",
   "scripts": {
     "test": "test",
-	"start": "node index"
+    "start": "node index"
   },
-  "author": "Aldo Barrera",
+  "author": "Ruben Villca",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -16,6 +16,7 @@
     "express-partials": "^0.3.0",
     "formidable": "^1.2.1",
     "method-override": "^3.0.0",
-    "mongoose": "^5.6.9"
+    "mongoose": "^5.6.9",
+    "nodemon": "^1.19.1"
   }
 }

@@ -1,19 +1,11 @@
-<!DOCTYPE html>
-
-<html lang="es">
+<!doctype html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="comida,delivery,pedir comida,domicilio,cochabamba">
-    <meta name="description"
-          content=" es el servicio de comida a domicilio líder en calidad que ofrece auténticas experiencias gastronómicas. Aquí encontrarás las cartas más extensas y variadas del mercado y una selección de los mejores restaurantes.">
-    <meta name="subjetc"
-          content="es el servicio de comida a domicilio líder en calidad que ofrece auténticas experiencias gastronómicas.">
-    <meta name="Author" content="Ruben Villca">
-
-    <title>NodeJs</title>
-
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
 
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
@@ -31,12 +23,10 @@
     <link href="http://localhost:3000/libs/slick/css/slick-theme.css" rel="stylesheet">
     <link href="http://localhost:3000/css/base.css" rel="stylesheet">
     <link href="http://localhost:3000/css/site.css" rel="stylesheet">
-
-
+</head>
 <body>
-
 <header>
-    <div class="">
+    <div class="container">
         <div class="row">
             <div class="col--md-4 col-sm-4 col-xs-4">
                 <a href="http://localhost:3000/" id="logo">
@@ -49,43 +39,12 @@
             <nav class="col--md-8 col-sm-8 col-xs-8">
                 <div class="main-menu main-menu-bar">
                     <ul>
-                        <li>
-                            <a href="login">
-                                Logout <i style="font-size: 19px;" class="fa fa-sign-out"></i>
-                            </a>
-                        </li>
-
+                        <li><a href="http://localhost:3000/login/create" class="show-submenu">Create user</a></li>
                     </ul>
                 </div>
                 <!-- End main-menu -->
             </nav>
 
-
-            <nav class="col--md-8 col-sm-8 col-xs-8">
-                <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close"
-                   href="javascript:$('#header-menu').show();"><span>Menu mobile</span></a>
-
-                <div class="main-menu">
-                    <div id="header_menu">
-                        <img src="http://localhost:3000/img/logo.png" height="60" alt="" data-retina="true">
-                    </div>
-                    <a href="#" class="open_close" id="close_in"><i class="icon_close"></i></a>
-                    <ul>
-                        <li><a href="http://localhost:3000/users" class="show-submenu">USERS(ADM)</a></li>
-                        <li><a href="http://localhost:3000/restaurants" class="show-submenu">RESTAURANT(ADM)</a></li>
-                        <li><a href="http://localhost:3000/comments">COMMENTS(ADM)</a></li>
-                        <li><a href="http://localhost:3000/restaurantsclient" class="show-submenu">RESTAURANTS</a></li>
-                        <li><a href="http://localhost:3000/commentsclient">COMMENTS</a></li>
-
-
-                        <li class="visible-xs visible-sm">
-                            <a target="_blank" href="#">Visítanos en &nbsp; <i class="fa fa-facebook-square fa-2x"></i></a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- End main-menu -->
-            </nav>
         </div>
         <!-- End row -->
     </div>
@@ -96,21 +55,29 @@
         <div id="header_menu">
             <img src="http://localhost:3000/img/logo.png" height="60" alt="" data-retina="true">
         </div>
-        <a href="#" class="open_close" id="close_in"><i class="icon_close"></i></a>
-        <ul>
-
-            <li><a href="http://localhost:3000/users" class="show-submenu">USERS(ADM)</a></li>
-            <li><a href="http://localhost:3000/restaurants" class="show-submenu">RESTAURANT(ADM)</a></li>
-            <li><a href="http://localhost:3000/comments">COMMENTS(ADM)</a></li>
-
-            <li class="visible-xs visible-sm">
-                <a target="_blank" href="#">Visítanos en <i class="fa fa-facebook-square fa-2x"></i></a>
-            </li>
-        </ul>
     </div>
 </div>
 
-<%- body -%>
+<div class="container" style="padding-top: 150px;">
+    <div class="card col-lg-offset-4 col-lg-4">
+        <div class="card-body">
+            <form action="/login" method="post">
+                <div class="form-group">
+                    <label>User name</label>
+                    <input type="text" class="form-control" name="user_name">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="user_password">
+                </div>
+
+                <button type="submit" class="btn btn-submit btn-lg">Login</button>
+            </form>
+
+            <hr>
+        </div>
+    </div>
+</div>
 
 <footer>
     <div class="container">
@@ -121,7 +88,7 @@
             <div id="social_footer">
                 <ul>
                     <li>
-                        <a href="#"><i style="font-size: 19px;" class="icon-facebook-squared"></i></a>
+                        <a href="#"><i style="font-size: 19px;" class="fa fa-book"></i></a>
                     </li>
 
                 </ul>
@@ -262,3 +229,4 @@
     });</script>
 </body>
 </html>
+

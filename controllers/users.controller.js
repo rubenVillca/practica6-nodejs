@@ -20,7 +20,7 @@ class UserController {
         this._isApi = value;
     }
     
-    getAll(req, res) {
+    async getAll(req, res) {
        userModel.find({}, (err, data) => {
             if (err) req.flash('info', 'Sorry!');
             if(this.isApi)

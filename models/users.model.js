@@ -11,8 +11,13 @@ var users = {
 	type:String, 
 	unique:false, 
 	required:false, 
+	},
+	user_password: {
+		type: String,
+		unique: false,
+		required: true,
 	}
-}
+};
 
 var usersSchema = new Schema(users);
 module.exports = mongoose.model('User', usersSchema);
