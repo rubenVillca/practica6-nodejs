@@ -1,11 +1,11 @@
 {
-  "name": "Practice 6",
+  "name": "Practica6",
   "version": "1.0.0",
   "description": "Example using http methods",
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "start": "node index"
+    "start": "node index.js"
   },
   "author": "Ruben Villca",
   "license": "MIT",
